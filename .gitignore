@@ -1,0 +1,12 @@
+# .NET build output
+bin/
+obj/
+*.user
+.vs/
+
+# WebView2 runtime user-data cache (created at runtime under %TEMP%, never here — just in case)
+*.WebView2/
+
+# local scratch / screenshots
+_*.png
+_*.log

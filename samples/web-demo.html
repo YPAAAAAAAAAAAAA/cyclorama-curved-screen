@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden;
+    font-family: "Segoe UI", system-ui, sans-serif; color: #fff; }
+  body {
+    background: linear-gradient(120deg, #0b1226 0%, #16345a 45%, #1e9bd1 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  h1 { font-size: 64px; margin: 0; letter-spacing: 2px; text-shadow: 0 4px 24px #000a; }
+  .sub { font-size: 26px; opacity: .85; margin-top: 8px; }
+  #clock { font-size: 40px; margin-top: 28px; font-variant-numeric: tabular-nums;
+    background: #ffffff1a; padding: 10px 22px; border-radius: 14px; }
+  .ball { position: absolute; width: 90px; height: 90px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #aef, #2af 60%, #08c);
+    box-shadow: 0 0 40px #2cf8; top: 40px; left: 40px; animation: move 4s ease-in-out infinite alternate; }
+  @keyframes move { from { transform: translate(0,0) scale(1); } to { transform: translate(1080px, 560px) scale(1.4); } }
+</style>
+</head>
+<body>
+  <div class="ball"></div>
+  <h1>CurveScreen · WEB ✓</h1>
+  <div class="sub">live webpage rendered on a concave surface</div>
+  <div id="clock">--:--:--</div>
+  <script>
+    function tick(){ const d=new Date();
+      document.getElementById('clock').textContent =
+        String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')+':'+String(d.getSeconds()).padStart(2,'0'); }
+    setInterval(tick, 250); tick();
+  </script>
+</body>
+</html>
