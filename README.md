@@ -1,4 +1,4 @@
-# CurveScreen
+# Cyclorama
 
 A tiny, standalone **curved screen for your desktop**. Point it at an image, a video, or a live web
 page and it renders that content onto a real concave 3D surface in a borderless, transparent,
@@ -10,21 +10,21 @@ your cursor and drifts gently on its own.
 ▶ full demo: [`media/demo.mp4`](media/demo.mp4) — and the demo itself is code: it's rendered from an
 HTML composition in [`promo/`](promo/) with HyperFrames.
 
-![CurveScreen showing a James Webb image on the curved surface](media/showcase.png)
+![Cyclorama showing a James Webb image on the curved surface](media/showcase.png)
 
 Extracted and generalized from a native curved companion display: the app-specific parts are gone,
 what's left is the pure curved-surface media carrier.
 
 ## Quick start
 
-- **Double-click `CurveScreen.exe`** → it opens with a bundled James Webb space image on the curve.
+- **Double-click `Cyclorama.exe`** → it opens with a bundled James Webb space image on the curve.
 - Or point it at your own content:
 
 ```
-CurveScreen "C:\photo.jpg"
-CurveScreen "C:\clip.mp4"
-CurveScreen https://example.com
-CurveScreen samples\cosmic-cliffs-live.mp4     # a bundled looping cosmic clip
+Cyclorama "C:\photo.jpg"
+Cyclorama "C:\clip.mp4"
+Cyclorama https://example.com
+Cyclorama samples\cosmic-cliffs-live.mp4     # a bundled looping cosmic clip
 ```
 
 `source` is auto-detected:
@@ -58,7 +58,7 @@ Real **James Webb Space Telescope** imagery to show off the curve — see `sampl
 - `cosmic-cliffs.jpg` — the Carina Nebula ("Cosmic Cliffs") — also the default image
 - `pillars-of-creation.jpg`, `deep-field.jpg`
 - `cosmic-cliffs-live.mp4` — a gently-looping animated version of the Cosmic Cliffs
-- `web-demo.html` — a tiny live web page: `CurveScreen samples\web-demo.html`
+- `web-demo.html` — a tiny live web page: `Cyclorama samples\web-demo.html`
 
 ## How it works
 
@@ -66,7 +66,7 @@ The content isn't warped as a 2D effect — it's painted onto a real **3D mesh**
 and viewed through a perspective camera. The concave-vs-convex shape is one sign in the mesh's `z`:
 
 ```
-concave (wraps in)   :  z = +curveDepth * nx²    // edges nearer the camera   ← CurveScreen
+concave (wraps in)   :  z = +curveDepth * nx²    // edges nearer the camera   ← Cyclorama
 convex  (bulges out) :  z = -curveDepth * nx²    // centre nearer the camera
 ```
 

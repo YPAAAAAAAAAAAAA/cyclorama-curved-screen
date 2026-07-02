@@ -13,18 +13,18 @@ using System.Windows.Threading;
 using WColor = System.Windows.Media.Color;
 using WPoint = System.Windows.Point;
 
-namespace CurveScreen;
+namespace Cyclorama;
 
-// CurveScreen — a standalone, lightweight "curved screen" on the desktop that can carry any media
+// Cyclorama — a standalone, lightweight "curved screen" on the desktop that can carry any media
 // (image / video / webpage) on a real concave 3D surface. Extracted and generalized from the RELIK
 // native curved companion host: the companion-specific bits (shared GPU texture, head-tracking,
 // avatar wiring) are gone; what's left is the pure curved-surface media carrier.
 //
 // Usage:
-//   CurveScreen <source> [options]            source is auto-detected: image / video / http(s) URL / .html
-//   CurveScreen --image photo.png
-//   CurveScreen --video clip.mp4
-//   CurveScreen --url https://example.com
+//   Cyclorama <source> [options]            source is auto-detected: image / video / http(s) URL / .html
+//   Cyclorama --image photo.png
+//   Cyclorama --video clip.mp4
+//   Cyclorama --url https://example.com
 // Options: --size WxH  --pos X,Y  --curve <0..0.8>  --flat  --still  --top  --mute
 // Drag the surface to move it; drag the bottom-right grip to resize (aspect-locked); Esc closes.
 
@@ -51,9 +51,9 @@ public static class Program
         if (spec is null)
         {
             MessageBox.Show(
-                "CurveScreen <source> [--size WxH] [--pos X,Y] [--curve 0.38] [--flat] [--still] [--top] [--mute]\n" +
+                "Cyclorama <source> [--size WxH] [--pos X,Y] [--curve 0.38] [--flat] [--still] [--top] [--mute]\n" +
                 "  source: an image, a video, or http(s):// URL",
-                "CurveScreen");
+                "Cyclorama");
             return;
         }
         var app = new Application { ShutdownMode = ShutdownMode.OnMainWindowClose };
@@ -191,7 +191,7 @@ public sealed class CurveWindow : Window
     public CurveWindow(ContentSpec spec)
     {
         this.spec = spec;
-        Title = "CurveScreen";
+        Title = "Cyclorama";
         Width = spec.Width;
         Height = spec.Height;
         if (spec.Left is double l) Left = l;

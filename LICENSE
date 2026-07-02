@@ -21,6 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 --------------------------------------------------------------------------------
-The MIT license above covers the CurveScreen source code. The bundled demo
+The MIT license above covers the Cyclorama source code. The bundled demo
 assets under `samples/` are third-party space imagery with their own credits —
 see `samples/CREDITS.md`.

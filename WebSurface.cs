@@ -8,7 +8,7 @@ using System.Windows.Threading;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.Wpf;
 
-namespace CurveScreen;
+namespace Cyclorama;
 
 // Renders a live web page onto the curved surface. WebView2 is an HWND/airspace control, so it can't
 // be a 3D material brush directly; instead we host it in a far-offscreen window, let it render at a
@@ -56,7 +56,7 @@ public sealed class WebSurface : IDisposable
         {
             // Keep the browser cache/profile out of the app folder.
             var env = await CoreWebView2Environment.CreateAsync(
-                userDataFolder: Path.Combine(Path.GetTempPath(), "CurveScreen.WebView2"));
+                userDataFolder: Path.Combine(Path.GetTempPath(), "Cyclorama.WebView2"));
             await web.EnsureCoreWebView2Async(env);
             web.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
             web.CoreWebView2.Settings.IsStatusBarEnabled = false;
