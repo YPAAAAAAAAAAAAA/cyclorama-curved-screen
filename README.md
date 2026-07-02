@@ -2,25 +2,12 @@
 
 **A curved screen, floating on your desktop.**
 
-```
-   ╭─╮                                            ╭─╮
-   │  ╰────────────────────────────────────────╯  │
-   │       ·        ✦            ·        ✦       │
-   │    ✦       C Y C L O R A M A        ·        │
-   │        ·          ✦         ·           ✦    │
-   │  ╭────────────────────────────────────────╮  │
-   ╰─╯                                            ╰─╯
-        the curved backdrop scenery is thrown onto —
-                     now on your desktop
-```
-
 Drop in a photo, a film, or a live web page — it plays on a concave panel that hangs there like the
 viewscreen of a starship bridge. No window, no frame, no chrome. Just a curved surface, broadcasting.
 It leans toward your cursor when you pass by, and drifts gently while it waits.
 
 ![demo](media/preview.gif)
 
-▶ **[Watch the full demo](media/demo.mp4)** — 40 seconds, and the demo itself is code 🎬
 
 | 🖼️ your pictures | 🎬 your films | 🌐 anything live on the web |
 |---|---|---|
@@ -35,10 +22,22 @@ Cyclorama film.mp4              # 🎬 a film — loops, floating player bar
 Cyclorama https://example.com   # 🌐 a live page: a dashboard, a stream, a clock
 ```
 
-Drag it anywhere · pull the corner to resize · `Esc` → gone ✨
+Drag it anywhere · pull the corner to resize · 
 
 Ships with **James Webb Space Telescope** imagery in [`samples/`](samples/) — nebulae, galaxies, the
-deep field — so out of the box it looks like it's receiving something from very, very far away 📡
+deep field — so out of the box it looks like it's receiving something from very, very far away 
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 🛠️ Details
 
