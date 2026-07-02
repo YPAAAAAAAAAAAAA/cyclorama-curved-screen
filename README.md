@@ -1,49 +1,46 @@
 # Cyclorama Curved Screen
 
-A curved screen for your desktop. Give it an image, a video, or a web page — it shows up on a real
-concave 3D surface in a borderless, transparent window that leans toward your cursor.
+**A curved screen, floating on your desktop.**
 
-![license](https://img.shields.io/badge/license-MIT-white) ![platform](https://img.shields.io/badge/Windows-.NET%208-blue)
+Drop in a photo, a film, or a live web page — it plays on a concave panel that hangs there like the
+viewscreen of a starship bridge. No window, no frame, no chrome. Just a curved surface, broadcasting.
+It leans toward your cursor when you pass by, and drifts gently while it waits.
 
 ![demo](media/preview.gif)
 
-▶ **[Watch the full demo](media/demo.mp4)** — the demo itself is code, rendered from
-[`promo/`](promo/) with [HyperFrames](https://github.com/heygen-com/hyperframes).
+▶ **[Watch the full demo](media/demo.mp4)** (40s)
 
-| image | video (with player) | live web page |
+| your pictures | your videos | anything live on the web |
 |---|---|---|
 | ![](media/showcase.png) | ![](media/video-player.png) | ![](media/web-mode.png) |
 
-## Use
+## Put anything on it
 
 ```
-Cyclorama                      # opens with a bundled James Webb image
-Cyclorama photo.jpg
-Cyclorama clip.mp4             # looped, with a play/seek/volume bar
-Cyclorama https://example.com
+Cyclorama                       # opens with a James Webb image, out of the box
+Cyclorama photo.jpg             # your picture
+Cyclorama film.mp4              # a video — loops, with a floating player bar
+Cyclorama https://example.com   # a live page: a dashboard, a stream, a clock
 ```
 
-Drag to move · drag the corner grip to resize · `Esc` to close.
+Drag it anywhere. Pull the corner to resize. `Esc` and it's gone.
 
-Useful flags: `--curve 0.5` (how bent, 0–0.8) · `--top` (always-on-top) · `--still` (no idle drift) ·
-`--mute` · `--size WxH` · `--pos X,Y`
+Ships with **James Webb Space Telescope** imagery in [`samples/`](samples/) — nebulae, galaxies, the
+deep field — so it looks like it's receiving something from very far away.
 
-## How it works
+## Details
 
-The content isn't a 2D warp effect — it's painted onto a real 3D mesh bent into a parabola:
+<sub>For the curious — everything technical lives here.</sub>
 
-```
-z = curveDepth · nx²        // flip the sign and the screen bulges outward instead
-```
-
-Images use an `ImageBrush`, video plays through a GPU `VideoDrawing`, and web pages render in an
-offscreen WebView2. Details are in [`Program.cs`](Program.cs) — the whole app is two files.
-
-## Build & run
-
-```
-dotnet build -c Release
-```
-
-Needs .NET 8 (Windows). Bundled space imagery is from the **James Webb Space Telescope**
-(NASA, ESA, CSA, STScI — [credits](samples/CREDITS.md)). Code is [MIT](LICENSE).
+- **Flags** — `--curve 0.5` (bend, 0–0.8) · `--flat` · `--top` (always-on-top) · `--still` (no idle
+  drift) · `--mute` · `--size WxH` · `--pos X,Y` · force a type with `--image` / `--video` / `--url`
+- **How it works** — the content is painted onto a real 3D mesh bent into a parabola
+  (`z = curveDepth · nx²`; flip the sign for a convex bulge) and viewed through a perspective camera.
+  Images use an `ImageBrush`, video plays through a GPU `VideoDrawing`, web pages render in an
+  offscreen WebView2. The whole app is two files — see [`Program.cs`](Program.cs).
+- **Build** — `dotnet build -c Release` · needs .NET 8 on Windows (WebView2 runtime for web pages,
+  preinstalled on current Windows 10/11)
+- **The demo is code** — [`promo/`](promo/) is an HTML composition rendered to mp4 with
+  [HyperFrames](https://github.com/heygen-com/hyperframes); `npx hyperframes render` rebuilds it
+- **Credits** — Webb imagery: NASA, ESA, CSA, STScI, CC BY 4.0 ([details](samples/CREDITS.md)) ·
+  code: [MIT](LICENSE)
